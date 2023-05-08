@@ -16,6 +16,7 @@ jobs:
         image: postgres:15.2
         env:
           POSTGRES_USER: docker
+          POSTGRES_PASSWORD: docker
           POSTGRES_SECRET: docker
           POSTGRES_DB: bank
         options: >-
