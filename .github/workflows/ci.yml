@@ -13,7 +13,7 @@ jobs:
 
     services:
       postgres:
-        image: postgres
+        image: bitnami/postgresql
         env:
           POSTGRESQL_USERNAME: docker
           POSTGRESQL_PASSWORD: docker
