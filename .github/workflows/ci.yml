@@ -13,11 +13,11 @@ jobs:
 
     services:
       postgres:
-        image: bitnami/postgresql
+        image: postgres:15.2
         env:
-          POSTGRESQL_USERNAME: docker
-          POSTGRESQL_PASSWORD: docker
-          POSTGRESQL_DATABASE: bank
+          POSTGRES_USER: docker
+          POSTGRES_SECRET: docker
+          POSTGRES_DB: bank
         options: >-
           --health-cmd pg_isready
           --health-interval 10s
@@ -35,7 +35,7 @@ jobs:
       - name: Install Go Migrate
         run: |
           curl -L https://github.com/golang-migrate/migrate/releases/download/v4.15.2/migrate.linux-amd64.tar.gz | tar xvz
-          sudo mv migrate.linux-amd64 /usr/bin/
+          sudo mv migrate.linux-amd64 /usr/bin/migrate
           which migrate
 
       - name: Migrations Up

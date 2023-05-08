@@ -7,4 +7,4 @@ migrate_down:
 test:
 	go test -v -cover ./...
 
-.PHONY: migrate_up migrate_down
+.PHONY: migrate_up migrate_down test
